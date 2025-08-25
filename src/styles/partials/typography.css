@@ -1,0 +1,30 @@
+h1, .h1 {
+    @apply heading-4xl;
+}
+h2, .h2 {
+    @apply heading-3xl;
+}
+h3, .h3 {
+    @apply heading-2xl;
+}
+h4, .h4 {
+    @apply heading-xl;
+}
+h5, .h5 {
+    @apply heading-lg;
+}
+.heading-4xl {
+    @apply text-4xl font-bold font-space;
+}
+.heading-3xl {
+    @apply text-3xl font-bold font-space;
+}
+.heading-2xl {
+    @apply text-2xl font-bold font-space;
+}
+.heading-xl {
+    @apply text-xl font-bold font-space;
+}
+.heading-lg {
+    @apply text-lg font-bold font-space;
+}

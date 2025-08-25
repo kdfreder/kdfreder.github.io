@@ -1,0 +1,55 @@
+@import "./partials/header.css";
+@import "./partials/forms.css";
+@import "./partials/buttons.css";
+@import "./partials/typography.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+	body {
+		min-height:100vh;
+		min-height: -webkit-fill-available;
+		margin:0;
+		padding:0;
+		line-height:1.5;
+        @apply font-inter
+	}
+
+	html {
+		height:-webkit-fill-available;
+		scroll-behavior: smooth;
+		visibility: visible;
+		opacity: 1;
+	}
+
+	html, body {
+		overflow-x: hidden;
+		::-webkit-scrollbar {
+			height:8px;
+			width: 8px;
+		}
+		::-webkit-scrollbar-track {
+			background: #f1f1f1;
+		}
+		::-webkit-scrollbar-thumb {
+			background: #888;
+		}
+		::-webkit-scrollbar-corner {
+			background: #f1f1f1;
+		}
+	}
+
+	html, body, #__nuxt, #__layout {
+		height:100%;
+	}
+}
+
+@layer components {
+	.wrapper {
+		width: 90%;
+		max-width: 1440px;
+		transition: 0.1s ease-out;
+	}
+}

@@ -1,0 +1,21 @@
+---
+import Nav from '../components/nav.astro';
+import "../styles/global.css";
+
+export interface Props {
+  currentPage?: string;
+}
+
+const { currentPage } = Astro.props;
+---
+
+<html>
+  <head>
+    <title>Kyle Frederick</title>
+  </head>
+  <body>
+    <div id="app">
+      <header id="header">
+        <Nav currentPage={currentPage} />
+      </header>
+      <main>

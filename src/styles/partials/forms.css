@@ -1,0 +1,66 @@
+/* Form styles */
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+	@apply inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white focus:outline-none focus:ring-2 focus:ring-offset-2 transition-colors bg-primary hover:bg-primary/60 focus:ring-primary;
+}
+
+input[type="button"]:disabled,
+input[type="reset"]:disabled,
+input[type="submit"]:disabled {
+	@apply opacity-50 cursor-not-allowed;
+}
+
+/* Form inputs */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"],
+input[type="url"],
+input[type="tel"],
+input[type="search"],
+textarea,
+select {
+	@apply appearance-none bg-white border border-gray-300 rounded-md px-3 py-2 text-gray-900 placeholder-gray-500 focus:outline-none focus:border-transparent focus:ring-2 focus:ring-primary;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+	@apply h-4 w-4 border-gray-300 rounded text-primary focus:ring-2 focus:ring-primary;
+}
+
+input[type="checkbox"] {
+	@apply rounded;
+}
+
+input[type="radio"] {
+	@apply rounded-full;
+}
+
+select {
+	@apply bg-no-repeat bg-right pr-10;
+	background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+	background-position: right 0.5rem center;
+	background-size: 1.5em 1.5em;
+}
+
+select[multiple] {
+	@apply bg-none;
+}
+
+/* Form field groups */
+.form-group {
+	@apply space-y-1;
+}
+
+.form-label {
+	@apply block text-sm font-medium text-gray-700;
+}
+
+.form-error {
+	@apply text-sm text-red-600;
+}
+
+.form-help {
+	@apply text-sm text-gray-500;
+}
