@@ -18,18 +18,18 @@ const navItems = [
 const isActive = (page: string) => currentPage === page;
 ---
 
-<nav class="bg-white shadow-sm border-b border-gray-200 relative">
+<nav class="bg-dark shadow-sm">
   <div class="container mx-auto">
-    <div class="flex justify-between items-center h-16">
+    <div class="flex justify-between items-center py-2">
       <!-- Logo/Brand -->
       <div class="flex items-center">
-        <a href="/" class="text-xl font-bold text-gray-900 hover:text-primary transition-colors">
+        <a href="/" class="font-body tracking-wider uppercase text-sm text-black hover:text-text-gray-900 transition-colors">
           Kyle Frederick
         </a>
       </div>
 
       <!-- Desktop Navigation -->
-      <div class="hidden md:flex items-center space-x-8">
+      <div class="hidden items-center space-x-8">
         {navItems.map(item => (
           <a 
             href={item.href} 
@@ -44,8 +44,8 @@ const isActive = (page: string) => currentPage === page;
         ))}
       </div>
 
-      <!-- Mobile menu button -->
-      <div class="md:hidden">
+      <!-- Mobile menu button md:hidden when ready-->
+      <div class="hidden">
         <button 
           type="button" 
           class="text-gray-600 hover:text-primary focus:outline-none focus:text-primary p-2"

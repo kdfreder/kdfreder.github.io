@@ -14,17 +14,17 @@ h5, .h5 {
     @apply heading-lg;
 }
 .heading-4xl {
-    @apply text-4xl font-bold font-space;
+    @apply text-4xl font-bold font-heading;
 }
 .heading-3xl {
-    @apply text-3xl font-bold font-space;
+    @apply text-3xl font-bold font-heading;
 }
 .heading-2xl {
-    @apply text-2xl font-bold font-space;
+    @apply text-2xl font-bold font-heading;
 }
 .heading-xl {
-    @apply text-xl font-bold font-space;
+    @apply text-xl font-bold font-heading;
 }
 .heading-lg {
-    @apply text-lg font-bold font-space;
+    @apply text-lg font-bold font-heading;
 }

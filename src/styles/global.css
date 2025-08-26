@@ -14,7 +14,7 @@
 		margin:0;
 		padding:0;
 		line-height:1.5;
-        @apply font-inter
+        @apply font-body bg-dark;
 	}
 
 	html {
@@ -25,7 +25,6 @@
 	}
 
 	html, body {
-		overflow-x: hidden;
 		::-webkit-scrollbar {
 			height:8px;
 			width: 8px;

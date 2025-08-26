@@ -6,10 +6,11 @@ export default {
 	theme: {
 		extend: {
 			fontFamily: {
-				'space': ['Space Grotesk', 'sans-serif'],
-				'inter': ['Inter', 'sans-serif'],
+				'heading': ['Space Grotesk', 'sans-serif'],
+				'body': ['Inter', 'sans-serif'],
 			},
 			colors: {
+				dark: '#2B2B2B',
 				primary: {
 					DEFAULT: '#3A6EA5',
 					50: '#f0f2ff',
