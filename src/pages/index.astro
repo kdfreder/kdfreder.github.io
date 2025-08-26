@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/layout.astro';
+import GitHubActivity from '../components/github-activity.astro';
 
 export interface Props {
   currentPage?: string;
@@ -17,6 +18,14 @@ const { currentPage = 'home' } = Astro.props;
 					<h1 class="text-3xl font-bold text-white mb-4">Welcome to My .Astro Project</h1>
 					<p class="text-sm text-white/80 mb-6">Crafted using Astro's component-based architecture, styled with Tailwind CSS for a modern, responsive design. This project leverages PostCSS for advanced CSS processing and is deployed seamlessly on GitHub Pages.</p>
 				</div>
+			</div>
+		</div>
+	</section>
+
+	<section class="bg-dark h-[100vh]">
+		<div class="container mx-auto h-full">
+			<div class="flex flex-col items-center justify-center h-full w-full">
+				<GitHubActivity username="kdfreder" repo="kdfreder.github.io" />
 			</div>
 		</div>
 	</section>

@@ -19,190 +19,100 @@ const isActive = (page: string) => currentPage === page;
 ---
 
 <nav id="nav">
-  <div class="container mx-auto">
-    <div class="flex justify-between items-center py-2">
-      <!-- Logo/Brand -->
-      <div class="flex items-center">
-        <a href="/" class="font-body tracking-wider uppercase text-sm text-black hover:text-text-gray-900 transition-colors">
-          Kyle Frederick
+  <div class="flex justify-between items-center py-2">
+    <!-- Logo/Brand -->
+    <div class="flex items-center">
+      <a href="/" class="font-cursive text-sm text-black hover:text-text-gray-900 transition-colors">
+        Kyle Frederick
+      </a>
+    </div>
+
+    <!-- Desktop Navigation -->
+    <div class="hidden items-center space-x-8">
+      {navItems.map(item => (
+        <a 
+          href={item.href} 
+          class={`text-sm font-medium transition-colors ${
+            isActive(item.page)
+              ? 'text-primary border-b-2 border-primary' 
+              : 'text-gray-600 hover:text-primary'
+          }`}
+        >
+          {item.label}
         </a>
+      ))}
+    </div>
+
+    <!-- Mobile menu button md:hidden when ready-->
+    <div class="hidden">
+      <button 
+        type="button" 
+        class="text-gray-600 hover:text-primary focus:outline-none focus:text-primary p-2"
+        aria-label="Toggle mobile menu"
+        aria-expanded="false"
+        id="mobile-menu-button"
+      >
+        <!-- Hamburger Icon -->
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="hamburger-icon">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <!-- Close Icon (hidden by default) -->
+        <svg class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="close-icon">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Navigation Overlay -->
+  <div 
+    class="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 opacity-0 pointer-events-none" 
+    id="mobile-overlay"
+  ></div>
+
+  <!-- Mobile Navigation Menu -->
+  <div 
+    class="md:hidden fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50" 
+    id="mobile-menu"
+  >
+    <div class="flex flex-col h-full">
+      <!-- Mobile menu header -->
+      <div class="flex items-center justify-between p-4 border-b border-gray-200">
+        <span class="text-lg font-semibold text-gray-900">Menu</span>
+        <button 
+          type="button" 
+          class="text-gray-600 hover:text-primary focus:outline-none p-2"
+          aria-label="Close mobile menu"
+          id="mobile-close-button"
+        >
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
       </div>
 
-      <!-- Desktop Navigation -->
-      <div class="hidden items-center space-x-8">
+      <!-- Mobile menu items -->
+      <nav class="flex-1 px-4 py-6 space-y-2">
         {navItems.map(item => (
           <a 
             href={item.href} 
-            class={`text-sm font-medium transition-colors ${
+            class={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
               isActive(item.page)
-                ? 'text-primary border-b-2 border-primary' 
-                : 'text-gray-600 hover:text-primary'
+                ? 'text-primary bg-gray-50' 
+                : 'text-gray-600 hover:text-primary hover:bg-gray-50'
             }`}
           >
             {item.label}
           </a>
         ))}
-      </div>
+      </nav>
 
-      <!-- Mobile menu button md:hidden when ready-->
-      <div class="hidden">
-        <button 
-          type="button" 
-          class="text-gray-600 hover:text-primary focus:outline-none focus:text-primary p-2"
-          aria-label="Toggle mobile menu"
-          aria-expanded="false"
-          id="mobile-menu-button"
-        >
-          <!-- Hamburger Icon -->
-          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="hamburger-icon">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
-          </svg>
-          <!-- Close Icon (hidden by default) -->
-          <svg class="h-6 w-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="close-icon">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-          </svg>
-        </button>
-      </div>
-    </div>
-
-    <!-- Mobile Navigation Overlay -->
-    <div 
-      class="md:hidden fixed inset-0 bg-black bg-opacity-50 z-40 transition-opacity duration-300 opacity-0 pointer-events-none" 
-      id="mobile-overlay"
-    ></div>
-
-    <!-- Mobile Navigation Menu -->
-    <div 
-      class="md:hidden fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform translate-x-full transition-transform duration-300 ease-in-out z-50" 
-      id="mobile-menu"
-    >
-      <div class="flex flex-col h-full">
-        <!-- Mobile menu header -->
-        <div class="flex items-center justify-between p-4 border-b border-gray-200">
-          <span class="text-lg font-semibold text-gray-900">Menu</span>
-          <button 
-            type="button" 
-            class="text-gray-600 hover:text-primary focus:outline-none p-2"
-            aria-label="Close mobile menu"
-            id="mobile-close-button"
-          >
-            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
-            </svg>
-          </button>
-        </div>
-
-        <!-- Mobile menu items -->
-        <nav class="flex-1 px-4 py-6 space-y-2">
-          {navItems.map(item => (
-            <a 
-              href={item.href} 
-              class={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
-                isActive(item.page)
-                  ? 'text-primary bg-gray-50' 
-                  : 'text-gray-600 hover:text-primary hover:bg-gray-50'
-              }`}
-            >
-              {item.label}
-            </a>
-          ))}
-        </nav>
-
-        <!-- Mobile menu footer -->
-        <div class="p-4 border-t border-gray-200">
-          <p class="text-sm text-gray-500">© 2024 Kyle Frederick</p>
-        </div>
+      <!-- Mobile menu footer -->
+      <div class="p-4 border-t border-gray-200">
+        <p class="text-sm text-gray-500">© 2024 Kyle Frederick</p>
       </div>
     </div>
   </div>
 </nav>
 
-<script is:inline>
-  class MobileMenu {
-    constructor() {
-      this.menuButton = document.getElementById('mobile-menu-button');
-      this.closeButton = document.getElementById('mobile-close-button');
-      this.mobileMenu = document.getElementById('mobile-menu');
-      this.overlay = document.getElementById('mobile-overlay');
-      this.hamburgerIcon = document.getElementById('hamburger-icon');
-      this.closeIcon = document.getElementById('close-icon');
-      this.isOpen = false;
 
-      this.init();
-    }
-
-    init() {
-      // Event listeners
-      this.menuButton?.addEventListener('click', () => this.toggle());
-      this.closeButton?.addEventListener('click', () => this.close());
-      this.overlay?.addEventListener('click', () => this.close());
-
-      // Close on escape key
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && this.isOpen) {
-          this.close();
-        }
-      });
-
-      // Close on window resize (if screen becomes large)
-      window.addEventListener('resize', () => {
-        if (window.innerWidth >= 768 && this.isOpen) {
-          this.close();
-        }
-      });
-    }
-
-    toggle() {
-      if (this.isOpen) {
-        this.close();
-      } else {
-        this.open();
-      }
-    }
-
-    open() {
-      if (!this.mobileMenu || !this.overlay || !this.menuButton) return;
-
-      this.isOpen = true;
-      
-      // Show overlay
-      this.overlay.classList.remove('opacity-0', 'pointer-events-none');
-      
-      // Slide in menu
-      this.mobileMenu.classList.remove('translate-x-full');
-      
-      // Update button state
-      this.menuButton.setAttribute('aria-expanded', 'true');
-      this.hamburgerIcon?.classList.add('hidden');
-      this.closeIcon?.classList.remove('hidden');
-      
-      // Prevent body scroll
-      document.body.style.overflow = 'hidden';
-    }
-
-    close() {
-      if (!this.mobileMenu || !this.overlay || !this.menuButton) return;
-
-      this.isOpen = false;
-      
-      // Hide overlay
-      this.overlay.classList.add('opacity-0', 'pointer-events-none');
-      
-      // Slide out menu
-      this.mobileMenu.classList.add('translate-x-full');
-      
-      // Update button state
-      this.menuButton.setAttribute('aria-expanded', 'false');
-      this.hamburgerIcon?.classList.remove('hidden');
-      this.closeIcon?.classList.add('hidden');
-      
-      // Restore body scroll
-      document.body.style.overflow = '';
-    }
-  }
-
-  // Initialize mobile menu when DOM is loaded
-  document.addEventListener('DOMContentLoaded', () => {
-    new MobileMenu();
-  });
-</script>

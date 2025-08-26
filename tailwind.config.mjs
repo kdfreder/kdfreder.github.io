@@ -22,13 +22,18 @@ export default {
         'gray': '#999999',
       },
       fontFamily: {
-        body: ['inter', 'sans-serif'],
-        heading: ['Space Grotesk', 'sans-serif'],
+        body: ['Inter', 'sans-serif'],
+        heading: ['Public Sans', 'sans-serif'],
+        'cursive': ['Edu NSW ACT Cursive', 'cursive'],
       },
       fontWeight: {
-        normal: 400,
-        medium: 500,
-        bold: 700,
+        'light': 300,
+        'regular': 400,
+        'medium': 500,
+        'semibold': 600,
+        'bold': 700,
+        'extrabold': 800,
+        'black': 900,
       },
       typography: {
         DEFAULT: {

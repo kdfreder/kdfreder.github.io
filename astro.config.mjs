@@ -6,4 +6,7 @@ export default defineConfig({
   base: '/',
   outDir: 'dist',
   integrations: [tailwind()],
+  devToolbar: {
+    enabled: false,
+  },
 });
