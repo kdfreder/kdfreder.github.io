@@ -1,0 +1,23 @@
+---
+// Define navigation items for cleaner code
+const navItemsFooter = [
+  { href: '/', label: 'Home', page: 'home' },
+  { href: '/about', label: 'About', page: 'about' },
+  { href: '/portfolio', label: 'portfolio', page: 'portfolio' },
+  { href: 'https://linkedin.com/in/kyle-frederick', label: 'Contact', page: 'contact', target: '_blank' }
+];
+---
+
+<nav id="footer-nav">
+    <!-- Footer Navigation -->
+    <ul class="grid grid-cols-1">
+      {navItemsFooter.map(item => (
+        <li class="menu-item"><a 
+          href={item.href} 
+          target={item.target}
+        >
+          {item.label}
+        </a></li>
+      ))}
+    </ul>
+</nav>

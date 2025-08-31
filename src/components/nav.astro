@@ -10,8 +10,8 @@ const { currentPage = 'home' } = Astro.props;
 const navItems = [
   { href: '/', label: 'Home', page: 'home' },
   { href: '/about', label: 'About', page: 'about' },
-  { href: '/projects', label: 'Projects', page: 'projects' },
-  { href: '/contact', label: 'Contact', page: 'contact' }
+  { href: '/portfolio', label: 'portfolio', page: 'portfolio' },
+  { href: 'https://linkedin.com/in/kyle-frederick', label: 'Contact', page: 'contact', target: '_blank' }
 ];
 
 // Helper function to check if item is active
@@ -22,20 +22,21 @@ const isActive = (page: string) => currentPage === page;
   <div class="flex justify-between items-center py-2">
     <!-- Logo/Brand -->
     <div class="flex items-center">
-      <a href="/" class="font-cursive text-sm text-black hover:text-text-gray-900 transition-colors">
+      <a href="/" class="font-shadow text-white/50 hover:text-text-gray-900 hover:scale-110 transition-all duration-500">
         Kyle Frederick
       </a>
     </div>
 
     <!-- Desktop Navigation -->
-    <div class="hidden items-center space-x-8">
+    <div class="hidden md:flex items-center space-x-6">
       {navItems.map(item => (
         <a 
           href={item.href} 
-          class={`text-sm font-medium transition-colors ${
+          target={item.target}
+          class={`text-sm font-medium lowercase font-shadow transition-all duration-500 md:px-2 md:text-center ${
             isActive(item.page)
-              ? 'text-primary border-b-2 border-primary' 
-              : 'text-gray-600 hover:text-primary'
+              ? 'text-white/50 border-b-2 border-gray-500 hover:text-white/90' 
+              : 'text-white/50 hover:text-white/90'
           }`}
         >
           {item.label}
@@ -44,7 +45,7 @@ const isActive = (page: string) => currentPage === page;
     </div>
 
     <!-- Mobile menu button md:hidden when ready-->
-    <div class="hidden">
+    <div class="md:hidden">
       <button 
         type="button" 
         class="text-gray-600 hover:text-primary focus:outline-none focus:text-primary p-2"
@@ -53,7 +54,7 @@ const isActive = (page: string) => currentPage === page;
         id="mobile-menu-button"
       >
         <!-- Hamburger Icon -->
-        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" id="hamburger-icon">
+        <svg class="h-6 w-6 stroke-white/50" fill="none" viewBox="0 0 24 24" id="hamburger-icon">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
         </svg>
         <!-- Close Icon (hidden by default) -->
@@ -96,6 +97,7 @@ const isActive = (page: string) => currentPage === page;
         {navItems.map(item => (
           <a 
             href={item.href} 
+            target={item.target}
             class={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
               isActive(item.page)
                 ? 'text-primary bg-gray-50' 

@@ -16,14 +16,15 @@ const { currentPage = 'home' } = Astro.props;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Kyle Frederick</title>
-
   </head>
-  <body>
+  <body x-data="snapScroll">
     <Header currentPage={currentPage} />
     <main id="main">
       <slot />
     </main>
     <Footer />
-    <script type="module" src="/src/scripts/global.js"></script>
   </body>
+
+  <script type="module" src="/src/scripts/global.js" defer></script>
+  
 </html>

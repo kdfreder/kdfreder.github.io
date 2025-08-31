@@ -9,8 +9,10 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/alpinejs": "^0.4.8",
     "@astrojs/tailwind": "^6.0.2",
+    "@fortawesome/fontawesome-free": "^7.0.0",
+    "aos": "^2.3.4",
     "astro": "^5.13.3"
-  },
-  "devDependencies": {}
+  }
 }

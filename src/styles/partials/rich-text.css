@@ -1,0 +1,23 @@
+.rich-text {
+    h1, h2, h3, h4, h5, h6 {
+        @apply mb-2;
+    }
+    h1, .h1 {
+        @apply heading-3xl;
+    }
+    h2, .h2 {
+        @apply heading-2xl;
+    }
+    h3, .h3 {
+        @apply heading-xl;
+    }
+    h4, .h4 {
+        @apply heading-lg;
+    }
+    a {
+        @apply underline hover:no-underline transition-all duration-500;
+        &:hover {
+            @apply text-primary;
+        }
+    }
+}

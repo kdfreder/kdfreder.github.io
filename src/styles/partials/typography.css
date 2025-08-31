@@ -1,0 +1,21 @@
+.heading-3xl {
+    @apply text-3xl font-bold leading-tight;
+}
+.heading-2xl {
+    @apply text-2xl font-bold leading-tight;
+}
+.heading-xl {
+    @apply text-xl font-bold leading-tight;
+}
+.heading-lg {
+    @apply text-lg font-bold leading-tight;
+}
+.heading-md {
+    @apply text-md font-bold leading-tight;
+}
+.heading-sm {
+    @apply text-sm font-bold leading-tight;
+}
+.heading-xs {
+    @apply text-xs font-bold;
+}

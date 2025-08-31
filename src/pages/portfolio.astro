@@ -1,0 +1,18 @@
+---
+import Layout from '../layouts/layout.astro';
+
+export interface Props {
+  currentPage?: string;
+}
+
+const { currentPage = 'portfolio' } = Astro.props;
+---
+
+<Layout currentPage="portfolio">
+  <section id="heroSection" class="h-screen relative">
+	<div class="container mx-auto h-full relative z-10">
+
+	</div>
+</section>
+  
+</Layout>

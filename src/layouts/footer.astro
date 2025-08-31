@@ -1,11 +1,35 @@
 ---
+import FooterNav from '../components/footernav.astro';
+import Socials from '../components/socials.astro';
+
+export interface Props {
+  currentPage?: string;
+}
+
+const { currentPage = 'footer' } = Astro.props;
 // Footer component
 ---
 
-<footer class="hidden bg-dark text-white py-8 w-full lg:py-16">
+<footer class="w-full py-4">
   <div class="container mx-auto">
-    <div class="text-center">
-      <p>&copy; 2025 Kyle Frederick. All rights reserved.</p>
+    <div class="flex item-start flex-wrap gap-4">
+      <div class="col">
+        <FooterNav currentPage={currentPage} />
+      </div>
+      <div class="col">
+        <ul class="grid grid-cols-1">
+          <li class="menu-item">Kyle Frederick</li>
+          <li class="menu-item"><a href="mailto:frederickkd@gmail.com" class="inline-block">frederickkd@gmail.com</a></li>
+          <li class="menu-item">Grand Rapids, MI</li>
+        </ul>
+      </div>
+      <div class="col w-full">
+        <ul>
+          <li class="menu-item">
+            <Socials />
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </footer>
