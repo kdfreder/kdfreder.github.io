@@ -3,6 +3,7 @@
 
 @import './partials/rich-text.css';
 @import './partials/typography.css'; 
+@import './partials/buttons.css';
 @import './components/flashbar.css';
 @import 'aos/dist/aos.css';
 @import '@fortawesome/fontawesome-free/css/all.min.css';

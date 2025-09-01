@@ -15,15 +15,15 @@ const { currentPage = 'info' } = Astro.props;
 		<div class="container mx-auto h-full relative z-10">
 			<div class="flex items-center justify-center h-full w-full">
 				<div class="rich-text text-center w-[80%] md:w-[60%] lg:w-[40%] mx-auto">
-					<h1 class="text-3xl font-bold text-white mb-4" data-aos="fade-down">Info</h1>
-					<p class="text-sm text-white/80 mb-6" data-aos="fade-up" data-aos-delay="100">Here you can find some information about me.</p>
+					<h1 class="text-3xl font-bold text-white mb-4">Info</h1>
+					<p class="text-sm text-white/80 mb-6">Here you can find some information about me.</p>
 				</div>
 			</div>
 		</div>
 	</section>
 
 	<section class="py-8 lg:py-16 bg-white">
-		<div class="container mx-auto">
+		<div class="container mx-auto" data-aos="fade-up">
 			<Resume />
 		</div>
 	</section>

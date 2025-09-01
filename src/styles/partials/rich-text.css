@@ -16,7 +16,7 @@
     }
     a {
         @apply underline hover:no-underline transition-all duration-500;
-        &:hover {
+        &:hover, &:focus {
             @apply text-primary;
         }
     }
