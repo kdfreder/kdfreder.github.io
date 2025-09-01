@@ -1,0 +1,97 @@
+---
+import { portfolioItems } from '../data/portfolio';
+
+// Sort items by date (newest first)
+const sortedItems = portfolioItems.sort((a, b) => {
+  if (a.date && b.date) {
+    return new Date(b.date).getTime() - new Date(a.date).getTime();
+  }
+  return 0;
+});
+---
+
+<section class="portfolio-grid">
+  <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    {sortedItems.map((item) => {
+      const {
+        title = 'Untitled Project',
+        description = 'No description available',
+        image = '/images/6835450453418620230.jpg',
+        tags = [],
+        link = null,
+        date = null
+      } = item;
+
+      return (
+        <article class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300" data-aos="fade-up">
+          <div class="relative overflow-hidden">
+            <img 
+              src={image} 
+              alt={title}
+              class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+            />
+            {tags && tags.length > 0 && (
+              <div class="absolute top-4 left-4 flex flex-wrap gap-2">
+                {tags.slice(0, 3).map((tag: string) => (
+                  <span class="bg-blue-500 text-white text-xs px-2 py-1 rounded-full">
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            )}
+          </div>
+          
+          <div class="p-6">
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">{title}</h3>
+            <p class="text-gray-600 text-sm mb-4 line-clamp-3">{description}</p>
+            
+            {date && (
+              <p class="text-gray-500 text-xs mb-4">
+                {new Date(date).toLocaleDateString('en-US', {
+                  year: 'numeric',
+                  month: 'long',
+                  day: 'numeric'
+                })}
+              </p>
+            )}
+            
+            <div class="flex justify-between items-center">
+              {link ? (
+                <a 
+                  href={link} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center text-blue-600 hover:text-blue-800 font-medium text-sm"
+                >
+                  View Project
+                  <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                  </svg>
+                </a>
+              ) : (
+                <span class="text-gray-400 text-sm">No link available</span>
+              )}
+            </div>
+          </div>
+        </article>
+      );
+    })}
+  </div>
+  
+  {sortedItems.length === 0 && (
+    <div class="text-center py-12">
+      <div class="text-gray-400 text-6xl mb-4">📁</div>
+      <h3 class="text-xl font-semibold text-gray-600 mb-2">No Portfolio Items Found</h3>
+      <p class="text-gray-500">Add some portfolio items to the <code class="bg-gray-100 px-2 py-1 rounded">src/data/portfolio.ts</code> file to see them here.</p>
+    </div>
+  )}
+</section>
+
+<style>
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
