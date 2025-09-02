@@ -3,6 +3,7 @@ export default {
   content: ['./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}'],
   theme: {
     extend: {
+			safelist: ['bg-primary', 'bg-secondary', 'bg-white', 'bg-black', 'bg-dark', 'bg-text', 'bg-gray', 'mb-1', 'mb-2', 'mb-3', 'mb-4', 'mb-5', 'mb-6', 'mb-7', 'mb-8', 'mb-9', 'mb-16'],
       container: {
         center: true,
         padding: {

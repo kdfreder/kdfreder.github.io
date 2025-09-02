@@ -1,0 +1,472 @@
+---
+import Layout from '../layouts/layout.astro';
+import Socials from '../components/socials.astro';
+import Nav from '../components/nav.astro';
+import FooterNav from '../components/footernav.astro';
+
+export interface Props {
+  currentPage?: string;
+}
+
+const { currentPage = 'branding' } = Astro.props;
+---
+
+<Layout currentPage="branding">
+
+	<section id="heroSection" class="h-[25vh] py-[25vh] relative">
+		<div class="container mx-auto h-full relative z-10">
+			<div class="flex items-center justify-center h-full w-full">
+				<div class="rich-text text-center w-[80%] md:w-[60%] lg:w-[40%] mx-auto">
+					<h1 class="text-3xl font-bold text-white mb-4">Branding</h1>
+					<p class="text-sm text-white/80 mb-6">Here you can find some information about me.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<section id="branding" class="bg-white py-8 lg:py-16">
+		<div class="container mx-auto">
+			<!-- Style Guide -->
+
+				<!-- Introduction -->
+				<div class="mb-16">
+					<div class="rich-text">
+						<h2 class="heading-3xl text-dark">Design System & Style Guide (Rich Text Block)</h2>
+						<p>This comprehensive style guide showcases all the design components, typography, colors, and interactive elements used throughout the website. Each component follows consistent design principles and maintains the brand's visual identity.</p>
+					</div>
+				</div>
+
+				<!-- Typography Section -->
+				<div class="mb-16">
+					<h3 class="heading-2xl text-dark">Typography (Raw Styles for Typography)</h3>
+					
+					<div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+						<!-- Font Families -->
+						<div class="p-6">
+							<h4 class="heading-lg text-dark mb-4">Font Families</h4>
+							<div class="space-y-4">
+								<div>
+									<p class="font-body text-dark/80 mb-2 underline">Body Font (Inter)</p>
+									<p class="font-body text-sm">The quick brown fox jumps over the lazy dog (text-sm)</p>
+									<p class="font-body text-lg">The quick brown fox jumps over the lazy dog (text-lg)</p>
+								</div>
+								<div>
+									<p class="font-heading text-dark/80 mb-2 underline">Heading Font (Public Sans)</p>
+									<p class="font-heading text-sm">The quick brown fox jumps over the lazy dog (text-sm)</p>
+									<p class="font-heading text-lg">The quick brown fox jumps over the lazy dog (text-lg)</p>
+								</div>
+								<div>
+									<p class="font-cursive text-dark/80 mb-2 underline">Cursive Font (Edu NSW ACT Cursive)</p>
+									<p class="font-cursive text-sm">The quick brown fox jumps over the lazy dog (text-sm)</p>
+									<p class="font-cursive text-lg">The quick brown fox jumps over the lazy dog (text-lg)</p>
+								</div>
+								<div>
+									<p class="font-shadow text-dark/80 mb-2 underline">Shadow Font (Shadows Into Light)</p>
+									<p class="font-shadow text-sm">The quick brown fox jumps over the lazy dog (text-sm)</p>
+									<p class="font-shadow text-lg">The quick brown fox jumps over the lazy dog (text-lg)</p>
+								</div>
+							</div>
+						</div>
+
+						<!-- Heading Hierarchy -->
+						<div class="p-6">
+							<h4 class="heading-lg text-dark mb-4">Heading Hierarchy</h4>
+							<div class="space-y-3 mb-4">
+								<h1 class="heading-3xl text-dark flex items-center gap-2"><span class="flex-shrink-0 w-10">H1</span>Heading 3XL (1.875rem)</h1>
+								<h2 class="heading-2xl text-dark flex items-center gap-2"><span class="flex-shrink-0 w-10">H2</span>Heading 2XL (1.5rem)</h2>
+								<h3 class="heading-xl text-dark flex items-center gap-2"><span class="flex-shrink-0 w-10">H3</span>Heading XL (1.25rem)</h3>
+								<h4 class="heading-lg text-dark flex items-center gap-2"><span class="flex-shrink-0 w-10">H4</span>Heading LG (1rem)</h4>
+								<h5 class="heading-md text-dark flex items-center gap-2"><span class="flex-shrink-0 w-10">H5</span>Heading MD (0.875rem)</h5>
+								<h6 class="heading-sm text-dark flex items-center gap-2"><span class="flex-shrink-0 w-10">H6</span>Heading SM (0.75rem)</h6>
+								<p class="heading-xs text-dark flex items-center gap-2"><span class="flex-shrink-0 w-10">p</span>Heading XS (0.75rem)</p>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Color Palette -->
+				<div class="mb-16">
+					<h3 class="heading-2xl text-dark mb-4">Color Palette</h3>
+					
+					<div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4 p-6">
+						<div class="text-center">
+							<div class="w-full h-20 bg-primary rounded-lg mb-2"></div>
+							<p class="text-dark/80 text-sm">Primary</p>
+							<p class="text-white/60 text-xs">#3B82F6</p>
+						</div>
+						<div class="text-center">
+							<div class="w-full h-20 bg-secondary rounded-lg mb-2"></div>
+							<p class="text-dark/80 text-sm">Secondary</p>
+							<p class="text-white/60 text-xs">#F3F4F6</p>
+						</div>
+						<div class="text-center">
+							<div class="w-full h-20 bg-white rounded-lg mb-2"></div>
+							<p class="text-dark/80 text-sm">White</p>
+							<p class="text-white/60 text-xs">#FFFFFF</p>
+						</div>
+						<div class="text-center">
+							<div class="w-full h-20 bg-black rounded-lg mb-2"></div>
+							<p class="text-dark/80 text-sm">Black</p>
+							<p class="text-white/60 text-xs">#000000</p>
+						</div>
+						<div class="text-center">
+							<div class="w-full h-20 bg-dark rounded-lg mb-2"></div>
+							<p class="text-dark/80 text-sm">Dark</p>
+							<p class="text-white/60 text-xs">#313338</p>
+						</div>
+						<div class="text-center">
+							<div class="w-full h-20 bg-text rounded-lg mb-2"></div>
+							<p class="text-dark/80 text-sm">Text</p>
+							<p class="text-white/60 text-xs">#333333</p>
+						</div>
+						<div class="text-center">
+							<div class="w-full h-20 bg-gray rounded-lg mb-2"></div>
+							<p class="text-dark/80 text-sm">Gray</p>
+							<p class="text-white/60 text-xs">#999999</p>
+						</div>
+					</div>
+				</div>
+
+				<!-- Button Styles -->
+				<div class="mb-16">
+					<h3 class="heading-2xl text-dark mb-4">Button Styles</h3>
+					
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
+						<!-- Primary Buttons -->
+						<div class="p-6">
+							<h4 class="heading-lg text-dark mb-4">Primary Buttons</h4>
+							<div class="space-y-4">
+								<button class="btn btn-primary">Primary Button</button>
+								<button class="btn btn-primary has-icon">
+									<i class="fas fa-arrow-right"></i>
+									Primary with Icon
+								</button>
+								<button class="btn btn-primary" disabled>Disabled Primary</button>
+							</div>
+						</div>
+
+						<!-- Secondary Buttons -->
+						<div class="p-6">
+							<h4 class="heading-lg text-dark mb-4">Secondary Buttons</h4>
+							<div class="space-y-4">
+								<button class="btn btn-secondary">Secondary Button</button>
+								<button class="btn btn-outline">Outline Button</button>
+								<button class="btn btn-link">Link Button</button>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Navigation Components -->
+				<div class="mb-16">
+					<h3 class="heading-2xl text-dark mb-4">Navigation Components</h3>
+					
+					<div class="p-6">
+						<h4 class="heading-lg text-dark mb-4">Desktop Navigation</h4>
+						<div class="header bg-dark p-6">
+							<div class="container mx-auto">
+								<Nav />
+							</div>
+						</div>
+					</div>
+
+					<div class="p-6">
+						<h4 class="heading-lg text-dark mb-4">Footer Navigation</h4>
+						<div class="footer bg-dark p-6">
+							<div class="container mx-auto">
+								<FooterNav />
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<!-- Social Links -->
+				<div class="mb-16">
+					<h3 class="heading-2xl text-dark mb-4">Social Links</h3>
+						<div class="p-6">
+							<h4 class="heading-lg text-dark mb-4">Icons (Font Awesome)</h4>
+							<Socials />
+						</div>
+				</div>
+
+				<!-- Portfolio Cards -->
+				<div class="mb-16">
+					<h3 class="heading-2xl text-dark mb-4">Portfolio Cards</h3>
+					
+					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6">
+						<article class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+							<div class="relative overflow-hidden z-0">
+								<img 
+									src="/images/placeholder.svg" 
+									alt="Sample Project"
+									class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+								/>
+								<div class="absolute w-full h-full pointer-events-none bg-black/20 z-10 top-0 left-0"></div>
+								<div class="absolute bottom-4 right-4 flex flex-wrap gap-2 justify-end z-20">
+									<span class="chip">Sample</span>
+									<span class="chip">Project</span>
+								</div>
+							</div>
+							
+							<div class="p-6">
+								<h3 class="font-bold mb-2 text-dark">Sample Project</h3>
+								<p class="text-sm mb-4 text-gray-600">This is an example portfolio card showcasing the design system components and styling.</p>
+								
+								<p class="text-xs mb-4 text-gray-500">January 15, 2025</p>
+								
+								<div class="flex flex-col gap-2">
+									<a 
+										href="#" 
+										target="_blank" 
+										rel="noopener noreferrer"
+										class="inline-flex items-center text-sm hover:text-primary transition-all duration-300"
+									>
+										View Project
+									</a>
+									<a 
+										href="#" 
+										target="_blank" 
+										rel="noopener noreferrer"
+										class="inline-flex items-center text-sm hover:text-primary transition-all duration-300"
+									>
+										Open Website
+										<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+										</svg>
+									</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+							<div class="relative overflow-hidden z-0">
+								<img 
+									src="/images/placeholder.svg" 
+									alt="Design System"
+									class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+								/>
+								<div class="absolute w-full h-full pointer-events-none bg-black/20 z-10 top-0 left-0"></div>
+								<div class="absolute bottom-4 right-4 flex flex-wrap gap-2 justify-end z-20">
+									<span class="chip">Design</span>
+									<span class="chip">System</span>
+								</div>
+							</div>
+							
+							<div class="p-6">
+								<h3 class="font-bold mb-2 text-dark">Design System</h3>
+								<p class="text-sm mb-4 text-gray-600">A comprehensive design system showcasing typography, colors, and component patterns.</p>
+								
+								<p class="text-xs mb-4 text-gray-500">December 10, 2024</p>
+								
+								<div class="flex flex-col gap-2">
+									<a 
+										href="#" 
+										target="_blank" 
+										rel="noopener noreferrer"
+										class="inline-flex items-center text-sm hover:text-primary transition-all duration-300"
+									>
+										View Project
+									</a>
+								</div>
+							</div>
+						</article>
+
+						<article class="portfolio-item bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
+							<div class="relative overflow-hidden z-0">
+								<img 
+									src="/images/placeholder.svg" 
+									alt="Component Library"
+									class="w-full h-48 object-cover hover:scale-105 transition-transform duration-300"
+								/>
+								<div class="absolute w-full h-full pointer-events-none bg-black/20 z-10 top-0 left-0"></div>
+								<div class="absolute bottom-4 right-4 flex flex-wrap gap-2 justify-end z-20">
+									<span class="chip">Components</span>
+									<span class="chip">Library</span>
+								</div>
+							</div>
+							
+							<div class="p-6">
+								<h3 class="font-bold mb-2 text-dark">Component Library</h3>
+								<p class="text-sm mb-4 text-gray-600">Reusable UI components built with consistent design principles and accessibility.</p>
+								
+								<p class="text-xs mb-4 text-gray-500">December 5, 2024</p>
+								
+								<div class="flex flex-col gap-2">
+									<a 
+										href="#" 
+										target="_blank" 
+										rel="noopener noreferrer"
+										class="inline-flex items-center text-sm hover:text-primary transition-all duration-300"
+									>
+										View Project
+									</a>
+								</div>
+							</div>
+						</article>
+					</div>
+				</div>
+
+				<!-- Interactive Elements -->
+				<div class="mb-16">
+					<h3 class="heading-2xl text-dark mb-4">Interactive Elements</h3>
+
+					<div class="p-6">
+						<form class="styled-form">
+							<div class="form-group">
+								<label>Input Field</label>
+								<input type="text" placeholder="Enter your text here">
+							</div>
+							<div class="form-group">
+								<label>Textarea</label>
+								<textarea placeholder="Enter your message here" rows="3"></textarea>
+							</div>
+							<div class="form-group">
+								<label>Checkbox</label>
+								<input type="checkbox">
+							</div>
+							<div class="form-group">
+								<label>Radio Button</label>
+								<input type="radio">
+							</div>
+							<div class="form-group">
+								<label>Select</label>
+								<div class="select-wrapper">
+									<select>
+										<option value="">Select an option</option>
+										<option value="1">Option 1</option>
+										<option value="2">Option 2</option>
+										<option value="3">Option 3</option>
+									</select>
+								</div>
+							</div>
+							<div class="form-group">
+								<label>File Input</label>
+								<input type="file">
+							</div>
+							<div class="form-group">
+								<label>Search Input</label>
+								<input type="search" placeholder="Search">
+							</div>
+							<div class="form-group">
+								<label>Select Multiple</label>
+								<select multiple>
+									<option value="">Choose Options</option>
+									<option value="1">Option 1</option>
+									<option value="2">Option 2</option>
+									<option value="3">Option 3</option>
+								</select>
+							</div>
+							<div class="form-group">
+								<label>Date Input</label>
+								<input type="date">
+							</div>
+							<div class="form-group">
+								<label>Time Input</label>
+								<input type="time">
+							</div>
+							<div class="form-group">
+								<label>Number Input</label>
+								<input type="number" placeholder="Enter your number here">
+							</div>
+							<div class="form-group">
+								<label>Email Input</label>
+								<input type="email" placeholder="Enter your email here">
+							</div>
+							<div class="form-group">
+								<label>Password Input</label>
+								<input type="password" placeholder="Enter your password here">
+							</div>
+						</form>
+					</div>
+
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
+						<!-- Status Indicators -->
+						<div class="p-6">
+							<h4 class="heading-lg text-dark mb-4">Status Indicators</h4>
+							<div class="space-y-4">
+								<div class="flex items-center space-x-2">
+									<div class="w-3 h-3 bg-green-500 rounded-full"></div>
+									<span class="text-dark/80 text-sm">Success</span>
+								</div>
+								<div class="flex items-center space-x-2">
+									<div class="w-3 h-3 bg-yellow-500 rounded-full"></div>
+									<span class="text-dark/80 text-sm">Warning</span>
+								</div>
+								<div class="flex items-center space-x-2">
+									<div class="w-3 h-3 bg-red-500 rounded-full"></div>
+									<span class="text-dark/80 text-sm">Error</span>
+								</div>
+								<div class="flex items-center space-x-2">
+									<div class="w-3 h-3 bg-blue-500 rounded-full"></div>
+									<span class="text-dark/80 text-sm">Info</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<!-- Spacing & Layout -->
+				<div class="mb-16">
+					<h3 class="heading-2xl text-dark mb-4">Spacing & Layout</h3>
+					
+					<div class="p-6">
+						<h4 class="heading-lg text-dark mb-4">Spacing Scale</h4>
+						<div class="space-y-4">
+							<div class="flex items-center space-x-4">
+								<div class="w-4 h-4 bg-primary rounded"></div>
+								<span class="text-dark/80 text-sm">4px (w-1 h-1)</span>
+							</div>
+							<div class="flex items-center space-x-4">
+								<div class="w-8 h-8 bg-primary rounded"></div>
+								<span class="text-dark/80 text-sm">8px (w-2 h-2)</span>
+							</div>
+							<div class="flex items-center space-x-4">
+								<div class="w-12 h-12 bg-primary rounded"></div>
+								<span class="text-dark/80 text-sm">12px (w-3 h-3)</span>
+							</div>
+							<div class="flex items-center space-x-4">
+								<div class="w-16 h-16 bg-primary rounded"></div>
+								<span class="text-dark/80 text-sm">16px (w-4 h-4)</span>
+							</div>
+							<div class="flex items-center space-x-4">
+								<div class="w-20 h-20 bg-primary rounded"></div>
+								<span class="text-dark/80 text-sm">20px (w-5 h-5)</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				<!-- Usage Guidelines -->
+				<div class="mb-16">
+					<h3 class="heading-2xl text-dark mb-4">Usage Guidelines</h3>
+					
+					<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+						<div class="p-6">
+							<h4 class="heading-lg text-dark mb-4">Design Principles</h4>
+							<ul class="space-y-2 text-dark/80 text-sm">
+								<li>• Maintain consistent spacing using the defined scale</li>
+								<li>• Use typography hierarchy to establish information hierarchy</li>
+								<li>• Apply hover states and transitions for interactive elements</li>
+								<li>• Ensure sufficient color contrast for accessibility</li>
+								<li>• Use the primary color sparingly for emphasis</li>
+							</ul>
+						</div>
+
+						<div class="p-6">
+							<h4 class="heading-lg text-dark mb-4">Component Best Practices</h4>
+							<ul class="space-y-2 text-dark/80 text-sm">
+								<li>• Always include proper ARIA labels for accessibility</li>
+								<li>• Use semantic HTML elements for better SEO</li>
+								<li>• Implement responsive design patterns</li>
+								<li>• Maintain consistent border radius and shadows</li>
+								<li>• Test components across different screen sizes</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+
+		</div>
+	</section>
+</Layout>

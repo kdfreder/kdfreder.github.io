@@ -1,0 +1,37 @@
+/* === Forms & Interactive Elements === */
+
+/* Base Form Styles */
+.styled-form {
+	@apply grid grid-cols-1 gap-6 max-w-screen-lg mx-auto;
+}
+.form-group {
+	@apply flex flex-col items-start;
+	label {
+		@apply block text-sm font-semibold text-dark mb-2;
+	}
+	input[type="text"],
+	input[type="email"],
+	input[type="password"],
+	input[type="number"],
+	input[type="date"],
+	input[type="time"],
+	input[type="search"],
+	input[type="file"],
+	input[type="checkbox"],
+	input[type="radio"],
+	input[type="select"],
+	textarea,
+	select {
+			@apply w-full px-4 py-3 bg-white border border-dark rounded-lg text-dark placeholder-dark/80 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent disabled:bg-dark/50 disabled:text-dark disabled:cursor-not-allowed transition-all duration-200 flex flex-col gap-2;
+	}
+	select {
+		@apply appearance-none relative;
+	}
+	.select-wrapper {
+		@apply relative w-full;
+		&::after {
+			@apply absolute right-4 top-1/2 transform -translate-y-1/2 text-dark/50 content-[''] block w-4 h-4 bg-contain bg-no-repeat bg-center pointer-events-none;
+			background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+		}
+	}
+}
