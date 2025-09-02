@@ -34,4 +34,34 @@
 			background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='none' stroke='%23000' stroke-width='2' stroke-linecap='round' stroke-linejoin='round' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
 		}
 	}
+	.checkbox-group {
+		@apply flex flex-row items-center gap-2;
+		label {
+			@apply block text-sm font-semibold text-dark mb-2;
+		}
+		.checkbox-wrapper {
+			@apply flex flex-row items-center gap-2;
+			input[type="checkbox"] {
+				@apply w-4 h-4;
+			}
+			.checkmark {
+				@apply w-4 h-4 bg-dark rounded-full;
+			}
+		}
+	}
+	.radio-group {
+		@apply flex flex-row items-center gap-2;
+		label {
+			@apply block text-sm font-semibold text-dark mb-2;
+		}
+		.radio-wrapper {
+			@apply flex flex-row items-center gap-2;
+			input[type="radio"] {
+				@apply w-4 h-4;
+			}
+			.checkmark {
+				@apply w-4 h-4 bg-dark rounded-full;
+			}
+		}
+	}	
 }

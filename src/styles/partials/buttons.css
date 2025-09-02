@@ -23,13 +23,15 @@
 	&.btn-link {
 		@apply text-dark underline hover:no-underline px-0 py-0 hover:text-primary focus:ring-secondary disabled:opacity-50 disabled:cursor-not-allowed;
 	}
+
+	&.btn-link-external {
+		@apply inline-flex items-center rounded-none text-dark no-underline border-b border-transparent hover:border-primary hover:no-underline focus:no-underline focus:border-primary focus:no-underline pt-0 pl-0 pr-0 pb-1 hover:text-primary focus:ring-secondary disabled:opacity-50 disabled:cursor-not-allowed;
+	}
+	
 	&.has-icon {
 		@apply gap-2;
 		i {
 			@apply text-sm;
 		}
-	}
-	+ .btn {
-		@apply mt-2 md:mt-0 md:ml-2;
 	}
 }

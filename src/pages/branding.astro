@@ -135,23 +135,28 @@ const { currentPage = 'branding' } = Astro.props;
 						<!-- Primary Buttons -->
 						<div class="p-6">
 							<h4 class="heading-lg text-dark mb-4">Primary Buttons</h4>
-							<div class="space-y-4">
+							<div class="flex flex-row flex-wrap gap-2">
 								<button class="btn btn-primary">Primary Button</button>
 								<button class="btn btn-primary has-icon">
 									<i class="fas fa-arrow-right"></i>
 									Primary with Icon
 								</button>
 								<button class="btn btn-primary" disabled>Disabled Primary</button>
+								<button class="btn btn-outline">Outline Button</button>
+								<button class="btn btn-link">Link Button</button>
 							</div>
 						</div>
 
 						<!-- Secondary Buttons -->
 						<div class="p-6">
 							<h4 class="heading-lg text-dark mb-4">Secondary Buttons</h4>
-							<div class="space-y-4">
+							<div class="flex flex-row flex-wrap gap-2 rounded-lg bg-dark p-6">
 								<button class="btn btn-secondary">Secondary Button</button>
-								<button class="btn btn-outline">Outline Button</button>
-								<button class="btn btn-link">Link Button</button>
+								<button class="btn btn-secondary has-icon">
+									<i class="fas fa-arrow-right"></i>
+									Secondary with Icon
+								</button>
+								<button class="btn btn-secondary" disabled>Disabled Secondary</button>
 							</div>
 						</div>
 					</div>
@@ -220,20 +225,18 @@ const { currentPage = 'branding' } = Astro.props;
 										href="#" 
 										target="_blank" 
 										rel="noopener noreferrer"
-										class="inline-flex items-center text-sm hover:text-primary transition-all duration-300"
+										class="btn btn-primary text-sm"
 									>
-										View Project
+										Open Project
 									</a>
 									<a 
 										href="#" 
 										target="_blank" 
 										rel="noopener noreferrer"
-										class="inline-flex items-center text-sm hover:text-primary transition-all duration-300"
+										class="btn btn-link-external has-icon text-sm self-center"
 									>
-										Open Website
-										<svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-										</svg>
+										View Website
+										<i class="fa-solid fa-external-link"></i>
 									</a>
 								</div>
 							</div>
@@ -264,9 +267,18 @@ const { currentPage = 'branding' } = Astro.props;
 										href="#" 
 										target="_blank" 
 										rel="noopener noreferrer"
-										class="inline-flex items-center text-sm hover:text-primary transition-all duration-300"
+										class="btn btn-primary text-sm"
 									>
-										View Project
+										Open Project
+									</a>
+									<a 
+										href="#" 
+										target="_blank" 
+										rel="noopener noreferrer"
+										class="btn btn-link-external has-icon text-sm self-center"
+									>
+										View Website
+										<i class="fa-solid fa-external-link"></i>
 									</a>
 								</div>
 							</div>
@@ -297,9 +309,19 @@ const { currentPage = 'branding' } = Astro.props;
 										href="#" 
 										target="_blank" 
 										rel="noopener noreferrer"
-										class="inline-flex items-center text-sm hover:text-primary transition-all duration-300"
+										class="btn btn-primary text-sm"
 									>
-										View Project
+										Open Project
+										<i class="fa-solid fa-external-link"></i>
+									</a>
+									<a 
+										href="#" 
+										target="_blank" 
+										rel="noopener noreferrer"
+										class="btn btn-link-external has-icon text-sm self-center"
+									>
+										View Website
+										<i class="fa-solid fa-external-link"></i>
 									</a>
 								</div>
 							</div>
@@ -322,12 +344,33 @@ const { currentPage = 'branding' } = Astro.props;
 								<textarea placeholder="Enter your message here" rows="3"></textarea>
 							</div>
 							<div class="form-group">
-								<label>Checkbox</label>
-								<input type="checkbox">
+								<div class="checkbox-group">	
+									<label>Checkbox
+										<div class="checkbox-wrapper">
+											<input type="checkbox">
+  											<span class="checkmark"></span>
+										</div>
+										<div class="checkbox-wrapper">
+											<input type="checkbox">
+  											<span class="checkmark"></span>
+										</div>
+										<div class="checkbox-wrapper">
+											<input type="checkbox">
+  											<span class="checkmark"></span>
+										</div>
+									</label>
+								</div>
 							</div>
 							<div class="form-group">
-								<label>Radio Button</label>
-								<input type="radio">
+								<div class="radio-group">
+									<label>Radio Button
+										<div class="radio-wrapper">
+											<input type="radio">Item 1</input>
+											<input type="radio">Item 2</input>
+											<input type="radio">Item 3</input>
+										</div>
+									</label>
+								</div>
 							</div>
 							<div class="form-group">
 								<label>Select</label>
@@ -457,11 +500,10 @@ const { currentPage = 'branding' } = Astro.props;
 						<div class="p-6">
 							<h4 class="heading-lg text-dark mb-4">Component Best Practices</h4>
 							<ul class="space-y-2 text-dark/80 text-sm">
-								<li>• Always include proper ARIA labels for accessibility</li>
+								<li>• Proper ARIA labels for accessibility</li>
 								<li>• Use semantic HTML elements for better SEO</li>
 								<li>• Implement responsive design patterns</li>
 								<li>• Maintain consistent border radius and shadows</li>
-								<li>• Test components across different screen sizes</li>
 							</ul>
 						</div>
 					</div>
