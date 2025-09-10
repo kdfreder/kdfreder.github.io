@@ -14,7 +14,7 @@
 @tailwind utilities;
 
 @layer base {
-  body {
+  html, body {
     @apply font-body bg-dark/90 scroll-smooth;
   }
   footer, .footer {

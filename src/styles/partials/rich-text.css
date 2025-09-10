@@ -15,9 +15,20 @@
         @apply heading-lg;
     }
     a {
-        @apply underline hover:no-underline transition-all duration-500;
+        @apply transition-all duration-500;
         &:hover, &:focus {
             @apply text-primary;
+        }
+        &:not(.btn) {
+            @apply underline;
+            &:hover, &:focus {
+                @apply no-underline;
+            }
+        }
+    }
+    p, ul, ol {
+        + p, + ul, + ol {
+            @apply mt-4;
         }
     }
 }
