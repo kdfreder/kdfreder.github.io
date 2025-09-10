@@ -11,13 +11,25 @@ const { currentPage = 'info' } = Astro.props;
 
 <Layout currentPage="info">
 
-	<section id="heroSection" class="h-[25vh] py-[25vh] relative">
-		<div class="container mx-auto h-full relative z-10">
-			<div class="flex items-center justify-center h-full w-full">
-				<div class="rich-text text-center w-[80%] md:w-[60%] lg:w-[40%] mx-auto">
-					<h1 class="text-3xl font-bold text-white mb-4">Info</h1>
-					<p class="text-sm text-white/80 mb-6">Here you can find some information about me.</p>
+	<section id="heroSection" class="min-h-screen pt-[42px] relative overflow-hidden">
+		<div class="w-full h-full relative z-10 px-0">		
+			<div class="img-feature relative w-full h-full min-h-screen">
+				<div class="container mx-auto flex h-screen pointer-events-none items-center justify-center h-full w-full absolute top-[50%] translate-y-[-50%] left-[50%] translate-x-[-50%] z-50">
+					<div class="rich-text text-center w-[80%] md:w-[60%] lg:w-[40%] mx-auto z-40">
+						<h1 class="text-3xl font-bold text-white mb-4">Info</h1>
+						<p class="text-white/80 mb-6">I’ve been a Web Developer for almost 20 years, and what keeps me coming back for more is the blend of creativity and problem-solving. I like making things look cool, building experiences that stand out, and continuing to learn new things.</p>
+					</div>
 				</div>
+				<div class="w-3/4 h-[55vh] shadow-lg z-10 relative">
+					<img src="/images/6835450453418620230.jpg" alt="Kyle Frederick" class="w-full h-full object-cover">
+				</div>
+				<div class="w-1/2 h-[70vh] shadow-lg right-0 absolute top-[50%] translate-y-[-50%] z-30">
+					<img src="/images/lv_2024.jpg" alt="Kyle Frederick" class="w-full h-full object-cover object-top">
+				</div>
+				<div class="w-1/2 ml-[5%] md:ml-[10%] h-[55vh] shadow-lg z-20 relative">
+					<img src="/images/ny_2024_01.jpg" alt="Kyle Frederick" class="w-full h-full  mt-[-5%] object-cover">
+				</div>
+				<div class="pointer-events-none bg-black/80 absolute top-0 left-0 w-full h-full z-40"></div>
 			</div>
 		</div>
 	</section>

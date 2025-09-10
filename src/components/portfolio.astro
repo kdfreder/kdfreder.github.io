@@ -48,7 +48,7 @@ const sortedItems = portfolioItems.sort((a, b) => {
             <p class="text-sm mb-4 line-clamp-3">{description}</p>
             
             {date && (
-              <p class="text-xs mb-4">
+              <p class="text-xs mb-4 text-dark/80">
                 {new Date(date + 'T00:00:00').toLocaleDateString('en-US', {
                   year: 'numeric',
                   month: 'long',

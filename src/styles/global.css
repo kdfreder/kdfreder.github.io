@@ -19,7 +19,7 @@
   }
   footer, .footer {
     .menu-item {
-      @apply text-sm font-medium inline-block lowercase font-shadow text-white/50;
+      @apply font-medium inline-block lowercase font-shadow text-white/50;
       a {
         @apply inline-block hover:text-white/90 transition-all duration-500;
       }
@@ -46,7 +46,7 @@
       @apply font-bold mb-2 text-dark;
     }
     .card-description {
-      @apply text-sm mb-4 text-dark/80;
+      @apply mb-4 text-dark/80;
     }
     .card-date {
       @apply text-xs mb-4 text-dark;

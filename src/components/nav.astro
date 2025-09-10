@@ -33,7 +33,7 @@ const isActive = (page: string) => currentPage === page;
         <a 
           href={item.href} 
           target={item.target}
-          class={`text-sm font-medium lowercase font-shadow transition-all duration-500 md:px-2 md:text-center ${
+          class={`font-medium lowercase font-shadow transition-all duration-500 md:px-2 md:text-center ${
             isActive(item.page)
               ? 'text-white/50 border-b-2 border-gray-500 hover:text-white/90' 
               : 'text-white/50 hover:text-white/90'
@@ -111,7 +111,7 @@ const isActive = (page: string) => currentPage === page;
 
       <!-- Mobile menu footer -->
       <div class="p-4 border-t border-gray-200">
-        <p class="text-sm text-gray-500">© 2024 Kyle Frederick</p>
+        <p class="text-gray-500">© 2024 Kyle Frederick</p>
       </div>
     </div>
   </div>
