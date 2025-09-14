@@ -21,6 +21,7 @@ export default {
         'dark': '#313338',
         'text': '#333333',
         'gray': '#999999',
+				'sand': '#f6d7b0',
       },
       fontFamily: {
         body: ['Inter', 'sans-serif'],
@@ -61,6 +62,31 @@ export default {
         'xl': '0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1)',
         '2xl': '0 25px 50px -12px rgba(0, 0, 0, 0.25)',
       },
+			animation: {
+				'text-slide': 'text-slide 12.5s cubic-bezier(0.83, 0, 0.17, 1) infinite',
+			},
+			keyframes: {
+					'text-slide': {
+							'0%, 16%': {
+									transform: 'translateY(0%)',
+							},
+							'20%, 36%': {
+									transform: 'translateY(-16.66%)',
+							},
+							'40%, 56%': {
+									transform: 'translateY(-33.33%)',
+							},
+							'60%, 76%': {
+									transform: 'translateY(-50%)',
+							},
+							'80%, 96%': {
+									transform: 'translateY(-66.66%)',
+							},
+							'100%': {
+									transform: 'translateY(-83.33%)',
+							},
+					},
+			},
     },
   },
   plugins: [],
