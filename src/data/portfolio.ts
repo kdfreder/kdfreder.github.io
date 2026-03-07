@@ -52,5 +52,14 @@ export const portfolioItems: PortfolioItem[] = [
     link: "https://mipac.net",
     project: "/projects/mipac",
     date: "2025-08-27"
+  },
+  {
+    title: "The Lucia Iris Foundation",
+    description: "Lead Developer; Custom WordPress website built with Tailwind CSS, jQuery, and PHP. A custom, scalable site built for a charitable organization to showcase their work and mission. Customized with Stripe, GiveWP, and more.",
+    image: "/images/luciairis.org_.png",
+    tags: ["Wordpress", "Tailwind CSS", "Stripe", "GiveWP", "Custom Development"],
+    link: "https://luciairis.org",
+    project: "/projects/luciairis",
+    date: "2026-03-02"
   }
 ];
