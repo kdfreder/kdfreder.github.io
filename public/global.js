@@ -127,9 +127,6 @@ const init = () => {
   // Initialize AOS
   initAOS();
   
-  // Initialize text orbit
-  initTextOrbit();
-  
   // Add scroll event listener for header background
   window.addEventListener('scroll', handleHeaderScroll);
   

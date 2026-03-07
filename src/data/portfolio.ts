@@ -45,7 +45,7 @@ export const portfolioItems: PortfolioItem[] = [
     date: "2024-08-01"
   },
   {
-    title: "MI Performance Assessment Cadre",
+    title: "MIPAC",
     description: "Lead Developer; Custom Craft CMS website built with Tailwind CSS, jQuery, and PHP(Twig). This project called for a custom assessment tools catalog featuring an interactive filter system.",
     image: "/images/mipac.net_.png",
     tags: ["Craft CMS", "Tailwind CSS", "Custom Development"],

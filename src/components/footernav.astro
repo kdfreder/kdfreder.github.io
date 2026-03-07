@@ -12,9 +12,10 @@ const navItemsFooter = [
     <!-- Footer Navigation -->
     <ul class="grid grid-cols-1">
       {navItemsFooter.map(item => (
-        <li class="menu-item"><a 
+        <li class="menu-item xl:text-xl"><a 
           href={item.href} 
           target={item.target}
+					title={item.label}
         >
           {item.label}
         </a></li>
