@@ -3,16 +3,16 @@
         @apply mb-2;
     }
     h1, .h1 {
-        @apply heading-3xl;
+        @apply text-3xl font-bold leading-tight;
     }
     h2, .h2 {
-        @apply heading-2xl;
+        @apply text-2xl font-bold leading-tight;
     }
     h3, .h3 {
-        @apply heading-xl;
+        @apply text-xl font-bold leading-tight;
     }
     h4, .h4 {
-        @apply heading-lg;
+        @apply text-lg font-bold leading-tight;
     }
     a {
         @apply transition-all duration-500;
