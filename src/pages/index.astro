@@ -40,14 +40,17 @@ async function getLatestCommitDate() {
       const formattedDate = commitDate.toLocaleDateString('en-US', {
         year: 'numeric',
         month: 'long',
-        day: 'numeric'
+        day: 'numeric',
+        timeZone: 'America/New_York'
       });
       
       const formattedTime = commitDate.toLocaleTimeString('en-US', {
-        hour12: false,
+        hour12: true,
         hour: '2-digit',
         minute: '2-digit',
-        second: '2-digit'
+        timeZoneName: 'short',
+        timeZone: 'America/New_York',
+        hourCycle: 'h23'
       });
       
       return {
